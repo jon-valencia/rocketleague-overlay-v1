@@ -1,20 +1,98 @@
 body {
   font-family: 'Orbitron', sans-serif;
   color: white;
-  background-color: beige;
+  background-color: cornflowerblue;
+  font-size: 10pt;
 }
 
-.ui.centered.grid.container {
-  padding-top: 40px;
-  font-size: 52pt;
-}
-.ui.centered.grid.container .timer {
-  padding-top: 10px;
+.ui.centered.grid {
+  margin: 10px 0 0 0;
+  font-size: 24pt;
+  font-weight: bold;
 }
 
-.ui.grid.boost-bar {
-  margin: 100px 50px 0 50px;
+.ui.centered.grid .score {
+  font-size: 42pt;
+  margin-top: 25px;
 }
 
+.ui.centered.grid .timer {
+  margin-top: 25px;
+}
 
+.ui.centered.grid .team-left-name {
+  margin-top: 25px;
+}
 
+.ui.centered.grid .team-right-name {
+  margin-top: 25px;
+}
+
+.ui.progress .bar {
+  min-width: 0;
+}
+
+.team-left.boost-bar.column .ui.progress>.label {
+  text-align: left;
+}
+
+.team-left.boost-bar.column .ui.progress>.label.boost {
+  text-align: right;
+}
+
+.team-right.boost-bar.column .ui.progress>.label {
+  text-align: right;
+}
+
+.team-right.boost-bar.column .ui.progress>.label.boost {
+  text-align: left;
+}
+
+.ui.player-stats.left.aligned.grid {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.ui.player-stats .spec-player {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.ui.player-stats .score {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.ui.player-stats .goals {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.ui.player-stats .shots {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.ui.player-stats .asst {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.ui.player-stats .saves {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.ui.scoreboard.equal.width.grid {
+  font-size: 24pt;
+  margin-top: 300px;
+  margin-right: 50px;
+  margin-left: 50px;
+  text-align: center;
+}
+
+.ui.scoreboard.equal.width.grid .row {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
