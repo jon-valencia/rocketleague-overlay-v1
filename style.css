@@ -20,12 +20,18 @@ body {
   margin-top: 25px;
 }
 
-.ui.centered.grid .team-left-name {
+.ui.centered.grid .team-left .name {
   margin-top: 25px;
 }
 
-.ui.centered.grid .team-right-name {
+.ui.centered.grid .team-right .name {
   margin-top: 25px;
+}
+
+.ui.spec-player.progress {
+  width: 580px;
+  position: absolute;
+  bottom: 15px;
 }
 
 .ui.progress .bar {

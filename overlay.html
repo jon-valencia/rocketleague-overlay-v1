@@ -38,7 +38,7 @@
         <div class="label boost p3">0</div>
       </div>
     </div>
-    <div class="team-left-name column right aligned">aasdf</div>
+    <div class="team-left name column right aligned">aasdf</div>
     <div class="team-left column right aligned">
       <div class="score">12</div>
     </div>
@@ -48,7 +48,7 @@
     <div class="team-right column left aligned">
       <div class="score">69</div>
     </div>
-    <div class="team-right-name column left aligned">aasdf</div>
+    <div class="team-right name column left aligned">aasdf</div>
     <div class="ui team-right boost-bar black column">
       <div class="ui player5-boost-bar progress orange inverted tiny">
         <div class="bar"></div>
@@ -68,27 +68,30 @@
     </div>
   </div>
 </div>
+<div class="ui spec-player progress">
+    <div class="bar"></div>
+</div>
 <div class="ui player-stats grid container left aligned">
-  <div class="black three wide column">
+  <div class="black column" style="flex: 0 0 180px">
     <div class="spec-player">Coltoon2000</div>
   </div>
-  <div class="black two wide column">
+  <div class="black column" style="flex: 0 0 80px">
     <div class="score">30</div>
     SCORE
   </div>
-  <div class="black two wide column">
+  <div class="black column" style="flex: 0 0 80px">
     <div class="goals">0</div>
     GOALS
   </div>
-  <div class="black two wide column">
+  <div class="black column" style="flex: 0 0 80px">
     <div class="shots">0</div>
     SHOTS
   </div>
-  <div class="black two wide column">
+  <div class="black column" style="flex: 0 0 80px">
     <div class="asst">0</div>
     ASST
   </div>
-  <div class="black two wide column">
+  <div class="black column" style="flex: 0 0 80px">
     <div class="saves">0</div>
     SAVES
   </div>
@@ -218,9 +221,11 @@
   $(() => {
     WsSubscribers.init(49322, true);
     WsSubscribers.subscribe("game", "update_state", (d) => {
-      // Scoreboard + Timer
+      // Scoreboard + Timer + Team Names
       $(".team-left .score").text(d['game']['teams'][0]['score']);
       $(".team-right .score").text(d['game']['teams'][1]['score']);
+      $(".team-left.name").text(d['game']['teams'][0]['name']);
+      $(".team-right.name").text(d['game']['teams'][1]['name']);
       let secs = d['game']['time_seconds'];
       let mins = Math.floor(secs / 60);
       let rSecs = secs - mins * 60;
@@ -234,65 +239,51 @@
 
       // group players by team
       let playTeam = _.groupBy(d['players'], 'team');
-
+      
       // Left Team
-      $(".ui.player1-boost-bar.progress").progress({
-        percent: d['players'][playTeam[0][0]['id']]['boost'],
-        autoSuccess: false
-      });
-      $(".label.player1").text(d['players'][playTeam[0][0]['id']]['name']);
-      $(".label.boost.p1").text(d['players'][playTeam[0][0]['id']]['boost']);
-
-      $(".ui.player2-boost-bar.progress").progress({
-        percent: d['players'][playTeam[0][1]['id']]['boost'],
-        autoSuccess: false
-      });
-      $(".label.player2").text(d['players'][playTeam[0][1]['id']]['name']);
-      $(".label.boost.p2").text(d['players'][playTeam[0][1]['id']]['boost']);
-
-      $(".ui.player3-boost-bar.progress").progress({
-        percent: d['players'][playTeam[0][2]['id']]['boost'],
-        autoSuccess: false
-      });
-      $(".label.player3").text(d['players'][playTeam[0][2]['id']]['name']);
-      $(".label.boost.p3").text(d['players'][playTeam[0][2]['id']]['boost']);
+      for (let i = 0; i < 3; i++) {
+        $(`.ui.player${i+1}-boost-bar.progress`).progress({
+          percent: d['players'][playTeam[0][i]['id']]['boost'],
+          autoSuccess: false
+        });
+        $(`.label.player${i+1}`).text(d['players'][playTeam[0][i]['id']]['name']);
+        $(`.label.boost.p${i+1}`).text(d['players'][playTeam[0][i]['id']]['boost']);
+      }
 
       // Right Team
-      $(".ui.player5-boost-bar.progress").progress({
-        percent: d['players'][playTeam[1][0]['id']]['boost'],
-        autoSuccess: false
-      });
-      $(".label.player5").text(d['players'][playTeam[1][0]['id']]['name']);
-      $(".label.boost.p5").text(d['players'][playTeam[1][0]['id']]['boost']);
+      for (let i = 0; i < 3; i++) {
+        $(`.ui.player${i+5}-boost-bar.progress`).progress({
+          percent: d['players'][playTeam[1][i]['id']]['boost'],
+          autoSuccess: false
+        });
+        $(`.label.player${i+5}`).text(d['players'][playTeam[1][i]['id']]['name']);
+        $(`.label.boost.p${i+5}`).text(d['players'][playTeam[1][i]['id']]['boost']);
+      }
 
-      $(".ui.player6-boost-bar.progress").progress({
-        percent: d['players'][playTeam[1][1]['id']]['boost'],
-        autoSuccess: false
-      });
-      $(".label.player6").text(d['players'][playTeam[1][1]['id']]['name']);
-      $(".label.boost.p6").text(d['players'][playTeam[1][1]['id']]['boost']);
-
-      $(".ui.player7-boost-bar.progress").progress({
-        percent: d['players'][playTeam[1][2]['id']]['boost'],
-        autoSuccess: false
-      });
-      $(".label.player7").text(d['players'][playTeam[1][2]['id']]['name']);
-      $(".label.boost.p7").text(d['players'][playTeam[1][2]['id']]['boost']);
-
-      // specced player
-      if (d['game']['target'] === '') $(".ui.player-stats").css("visibility", "hidden"); // if no spec player, no stats
+      // Displays the stats of the player being spectated
+      if (d['game']['target'] === '') {
+        $(".ui.player-stats").css("visibility", "hidden"); // if no spec player, no stats
+        $(".ui.spec-player.progress").css("visibility", "hidden"); // if no spec, no  boost bar
+      } 
       else {
         $(".ui.player-stats").css("visibility", "visible");
+        $(".ui.spec-player.progress").css("visibility", "visible");
         $(".ui.spec-player.progress").progress({
           percent: d['players'][d['game']['target']]['boost'],
           autoSuccess: false
         });
-        $(".ui.player-stats .spec-player").text(d['players'][d['game']['target']]['name'])
-        $(".ui.player-stats .score").text(d['players'][d['game']['target']]['score'])
-        $(".ui.player-stats .goals").text(d['players'][d['game']['target']]['goals'])
-        $(".ui.player-stats .shots").text(d['players'][d['game']['target']]['shots'])
-        $(".ui.player-stats .asst").text(d['players'][d['game']['target']]['assits'])
-        $(".ui.player-stats .saves").text(d['players'][d['game']['target']]['saves'])
+        if (d['players'][d['game']['target']]['team'] === 0) {
+          $(".ui.spec-player.progress .bar").css("background-color", "#54c8ff");
+        } else {
+          $(".ui.spec-player.progress .bar").css("background-color", "#ff851b")
+        }
+        
+        $(".ui.player-stats .spec-player").text(d['players'][d['game']['target']]['name']);
+        $(".ui.player-stats .score").text(d['players'][d['game']['target']]['score']);
+        $(".ui.player-stats .goals").text(d['players'][d['game']['target']]['goals']);
+        $(".ui.player-stats .shots").text(d['players'][d['game']['target']]['shots']);
+        $(".ui.player-stats .asst").text(d['players'][d['game']['target']]['assits']);
+        $(".ui.player-stats .saves").text(d['players'][d['game']['target']]['saves']);
       }
     })
   })
