@@ -1,292 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Rocket League Overlay!</title>
-  <script
-      src="https://code.jquery.com/jquery-3.6.0.js"
-      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-      crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js" integrity="sha512-ZuOjyqq409+q6uc49UiBF3fTeyRyP8Qs0Jf/7FxH5LfhqBMzrR5cwbpDA4BgzSo884w6q/+oNdIeHenOqhISGw==" crossorigin="anonymous"
-          referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.1/underscore-min.js"
+    integrity="sha512-ZuOjyqq409+q6uc49UiBF3fTeyRyP8Qs0Jf/7FxH5LfhqBMzrR5cwbpDA4BgzSo884w6q/+oNdIeHenOqhISGw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./node_modules/svg-gauge/dist/gauge.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="ui centered grid">
-  <div class="seven column row">
-    <div class="ui team-left boost-bar black column">
-      <div class="ui player1-boost-bar progress blue inverted tiny">
-        <div class="bar"></div>
-        <div class="label player1">player name</div>
-        <div class="label boost p1">0</div>
+  <div class="ui centered grid">
+    <div class="seven column row">
+      <div class="ui team-left boost-bar black column">
+        <div class="ui player1-boost-bar progress blue inverted tiny">
+          <div class="bar"></div>
+          <div class="label player1">player name</div>
+          <div class="label boost p1">0</div>
+        </div>
+        <div class="ui player2-boost-bar progress blue inverted tiny">
+          <div class="bar"></div>
+          <div class="label player2">player name</div>
+          <div class="label boost p2">0</div>
+        </div>
+        <div class="ui player3-boost-bar progress blue inverted tiny">
+          <div class="bar"></div>
+          <div class="label player3">player name</div>
+          <div class="label boost p3">0</div>
+        </div>
       </div>
-      <div class="ui player2-boost-bar progress blue inverted tiny">
-        <div class="bar"></div>
-        <div class="label player2">player name</div>
-        <div class="label boost p2">0</div>
+      <div class="team-left name column right aligned">aasdf</div>
+      <div class="team-left column right aligned">
+        <div class="score">12</div>
       </div>
-      <div class="ui player3-boost-bar progress blue inverted tiny">
-        <div class="bar"></div>
-        <div class="label player3">player name</div>
-        <div class="label boost p3">0</div>
+      <div class="timer column center aligned">
+        <div class="timer">0:00</div>
       </div>
-    </div>
-    <div class="team-left name column right aligned">aasdf</div>
-    <div class="team-left column right aligned">
-      <div class="score">12</div>
-    </div>
-    <div class="timer column center aligned">
-      <div class="timer">0:00</div>
-    </div>
-    <div class="team-right column left aligned">
-      <div class="score">69</div>
-    </div>
-    <div class="team-right name column left aligned">aasdf</div>
-    <div class="ui team-right boost-bar black column">
-      <div class="ui player5-boost-bar progress orange inverted tiny">
-        <div class="bar"></div>
-        <div class="label player5">player name</div>
-        <div class="label boost p5">0</div>
+      <div class="team-right column left aligned">
+        <div class="score">69</div>
       </div>
-      <div class="ui player6-boost-bar progress orange inverted tiny">
-        <div class="bar"></div>
-        <div class="label player6">player name</div>
-        <div class="label boost p6">0</div>
-      </div>
-      <div class="ui player7-boost-bar progress orange inverted tiny">
-        <div class="bar"></div>
-        <div class="label player7">player name</div>
-        <div class="label boost p7">0</div>
+      <div class="team-right name column left aligned">aasdf</div>
+      <div class="ui team-right boost-bar black column">
+        <div class="ui player5-boost-bar progress orange inverted tiny">
+          <div class="bar"></div>
+          <div class="label player5">player name</div>
+          <div class="label boost p5">0</div>
+        </div>
+        <div class="ui player6-boost-bar progress orange inverted tiny">
+          <div class="bar"></div>
+          <div class="label player6">player name</div>
+          <div class="label boost p6">0</div>
+        </div>
+        <div class="ui player7-boost-bar progress orange inverted tiny">
+          <div class="bar"></div>
+          <div class="label player7">player name</div>
+          <div class="label boost p7">0</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="ui spec-player progress">
+  <div class="ui spec-player progress">
     <div class="bar"></div>
-</div>
-<div class="ui player-stats grid container left aligned">
-  <div class="black column" style="flex: 0 0 180px">
-    <div class="spec-player">Coltoon2000</div>
   </div>
-  <div class="black column" style="flex: 0 0 80px">
-    <div class="score">30</div>
-    SCORE
+  <div class="ui player-stats grid container left aligned">
+    <div class="black column" style="flex: 0 0 180px">
+      <div class="spec-player">Coltoon2000</div>
+    </div>
+    <div class="black column" style="flex: 0 0 80px">
+      <div class="score">30</div>
+      SCORE
+    </div>
+    <div class="black column" style="flex: 0 0 80px">
+      <div class="goals">0</div>
+      GOALS
+    </div>
+    <div class="black column" style="flex: 0 0 80px">
+      <div class="shots">0</div>
+      SHOTS
+    </div>
+    <div class="black column" style="flex: 0 0 80px">
+      <div class="asst">0</div>
+      ASST
+    </div>
+    <div class="black column" style="flex: 0 0 80px">
+      <div class="saves">0</div>
+      SAVES
+    </div>
   </div>
-  <div class="black column" style="flex: 0 0 80px">
-    <div class="goals">0</div>
-    GOALS
-  </div>
-  <div class="black column" style="flex: 0 0 80px">
-    <div class="shots">0</div>
-    SHOTS
-  </div>
-  <div class="black column" style="flex: 0 0 80px">
-    <div class="asst">0</div>
-    ASST
-  </div>
-  <div class="black column" style="flex: 0 0 80px">
-    <div class="saves">0</div>
-    SAVES
-  </div>
-</div>
-<script>
-  const WsSubscribers = {
-    __subscribers: {},
-    websocket: undefined,
-    webSocketConnected: false,
-    registerQueue: [],
-    init: function (port, debug, debugFilters) {
-      port = port || 49322;
-      debug = debug || false;
-      if (debug) {
-        if (debugFilters !== undefined) {
-          console.warn("WebSocket Debug Mode enabled with filtering. Only events not in the filter list will be dumped");
-        } else {
-          console.warn("WebSocket Debug Mode enabled without filters applied. All events will be dumped to console");
-          console.warn("To use filters, pass in an array of 'channel:event' strings to the second parameter of the init function");
-        }
-      }
-      WsSubscribers.webSocket = new WebSocket("ws://localhost:" + port);
-      WsSubscribers.webSocket.onmessage = function (event) {
-        let jEvent = JSON.parse(event.data);
-        if (!jEvent.hasOwnProperty('event')) {
-          return;
-        }
-        let eventSplit = jEvent.event.split(':');
-        let channel = eventSplit[0];
-        let event_event = eventSplit[1];
+  <script>
+    const WsSubscribers = {
+      __subscribers: {},
+      websocket: undefined,
+      webSocketConnected: false,
+      registerQueue: [],
+      init: function (port, debug, debugFilters) {
+        port = port || 49322;
+        debug = debug || false;
         if (debug) {
-          if (!debugFilters) {
-            console.log(channel, event_event, jEvent);
-          } else if (debugFilters && debugFilters.indexOf(jEvent.event) < 0) {
-            console.log(channel, event_event, jEvent);
+          if (debugFilters !== undefined) {
+            console.warn("WebSocket Debug Mode enabled with filtering. Only events not in the filter list will be dumped");
+          } else {
+            console.warn("WebSocket Debug Mode enabled without filters applied. All events will be dumped to console");
+            console.warn("To use filters, pass in an array of 'channel:event' strings to the second parameter of the init function");
           }
         }
-        WsSubscribers.triggerSubscribers(channel, event_event, jEvent.data);
-      };
-      WsSubscribers.webSocket.onopen = function () {
-        WsSubscribers.triggerSubscribers("ws", "open");
-        WsSubscribers.webSocketConnected = true;
-        WsSubscribers.registerQueue.forEach((r) => {
-          WsSubscribers.send("wsRelay", "register", r);
-        });
-        WsSubscribers.registerQueue = [];
-      };
-      WsSubscribers.webSocket.onerror = function () {
-        WsSubscribers.triggerSubscribers("ws", "error");
-        WsSubscribers.webSocketConnected = false;
-      };
-      WsSubscribers.webSocket.onclose = function () {
-        WsSubscribers.triggerSubscribers("ws", "close");
-        WsSubscribers.webSocketConnected = false;
-      };
-    },
-    /**
-     * Add callbacks for when certain events are thrown
-     * Execution is guaranteed to be in First In First Out order
-     * @param channels
-     * @param events
-     * @param callback
-     */
-    subscribe: function (channels, events, callback) {
-      if (typeof channels === "string") {
-        let channel = channels;
-        channels = [];
-        channels.push(channel);
-      }
-      if (typeof events === "string") {
-        let event = events;
-        events = [];
-        events.push(event);
-      }
-      channels.forEach(function (c) {
-        events.forEach(function (e) {
-          if (!WsSubscribers.__subscribers.hasOwnProperty(c)) {
-            WsSubscribers.__subscribers[c] = {};
+        WsSubscribers.webSocket = new WebSocket("ws://localhost:" + port);
+        WsSubscribers.webSocket.onmessage = function (event) {
+          let jEvent = JSON.parse(event.data);
+          if (!jEvent.hasOwnProperty('event')) {
+            return;
           }
-          if (!WsSubscribers.__subscribers[c].hasOwnProperty(e)) {
-            WsSubscribers.__subscribers[c][e] = [];
-            if (WsSubscribers.webSocketConnected) {
-              WsSubscribers.send("wsRelay", "register", `${c}:${e}`);
-            } else {
-              WsSubscribers.registerQueue.push(`${c}:${e}`);
+          let eventSplit = jEvent.event.split(':');
+          let channel = eventSplit[0];
+          let event_event = eventSplit[1];
+          if (debug) {
+            if (!debugFilters) {
+              console.log(channel, event_event, jEvent);
+            } else if (debugFilters && debugFilters.indexOf(jEvent.event) < 0) {
+              console.log(channel, event_event, jEvent);
             }
           }
-          WsSubscribers.__subscribers[c][e].push(callback);
-        });
-      })
-    },
-    clearEventCallbacks: function (channel, event) {
-      if (WsSubscribers.__subscribers.hasOwnProperty(channel) && WsSubscribers.__subscribers[channel].hasOwnProperty(event)) {
-        WsSubscribers.__subscribers[channel] = {};
-      }
-    },
-    triggerSubscribers: function (channel, event, data) {
-      if (WsSubscribers.__subscribers.hasOwnProperty(channel) && WsSubscribers.__subscribers[channel].hasOwnProperty(event)) {
-        WsSubscribers.__subscribers[channel][event].forEach(function (callback) {
-          if (callback instanceof Function) {
-            callback(data);
-          }
-        });
-      }
-    },
-    send: function (channel, event, data) {
-      if (typeof channel !== 'string') {
-        console.error("Channel must be a string");
-        return;
-      }
-      if (typeof event !== 'string') {
-        console.error("Event must be a string");
-        return;
-      }
-      if (channel === 'local') {
-        this.triggerSubscribers(channel, event, data);
-      } else {
-        let cEvent = channel + ":" + event;
-        WsSubscribers.webSocket.send(JSON.stringify({
-          'event': cEvent,
-          'data': data
-        }));
-      }
-    }
-  };
-
-  $(() => {
-    WsSubscribers.init(49322, true);
-    WsSubscribers.subscribe("game", "update_state", (d) => {
-      // Scoreboard + Timer + Team Names
-      $(".team-left .score").text(d['game']['teams'][0]['score']);
-      $(".team-right .score").text(d['game']['teams'][1]['score']);
-      $(".team-left.name").text(d['game']['teams'][0]['name']);
-      $(".team-right.name").text(d['game']['teams'][1]['name']);
-      let secs = d['game']['time_seconds'];
-      let mins = Math.floor(secs / 60);
-      let rSecs = secs - mins * 60;
-      let fSecs = rSecs.toLocaleString('en-US', {
-        minimumIntegerDigits: 2,
-        useGrouping: false
-      })
-      if (d['game']['isOT'] === true) $(".timer").text("+" + mins + ":" + fSecs);
-      else $(".timer").text(mins + ":" + fSecs);
-      $(".team-left-name").text()
-
-      // group players by team
-      let playTeam = _.groupBy(d['players'], 'team');
-      
-      // Left Team
-      for (let i = 0; i < 3; i++) {
-        $(`.ui.player${i+1}-boost-bar.progress`).progress({
-          percent: d['players'][playTeam[0][i]['id']]['boost'],
-          autoSuccess: false
-        });
-        $(`.label.player${i+1}`).text(d['players'][playTeam[0][i]['id']]['name']);
-        $(`.label.boost.p${i+1}`).text(d['players'][playTeam[0][i]['id']]['boost']);
-      }
-
-      // Right Team
-      for (let i = 0; i < 3; i++) {
-        $(`.ui.player${i+5}-boost-bar.progress`).progress({
-          percent: d['players'][playTeam[1][i]['id']]['boost'],
-          autoSuccess: false
-        });
-        $(`.label.player${i+5}`).text(d['players'][playTeam[1][i]['id']]['name']);
-        $(`.label.boost.p${i+5}`).text(d['players'][playTeam[1][i]['id']]['boost']);
-      }
-
-      // Displays the stats of the player being spectated
-      if (d['game']['target'] === '') {
-        $(".ui.player-stats").css("visibility", "hidden"); // if no spec player, no stats
-        $(".ui.spec-player.progress").css("visibility", "hidden"); // if no spec, no  boost bar
-      } 
-      else {
-        $(".ui.player-stats").css("visibility", "visible");
-        $(".ui.spec-player.progress").css("visibility", "visible");
-        $(".ui.spec-player.progress").progress({
-          percent: d['players'][d['game']['target']]['boost'],
-          autoSuccess: false
-        });
-        if (d['players'][d['game']['target']]['team'] === 0) {
-          $(".ui.spec-player.progress .bar").css("background-color", "#54c8ff");
-        } else {
-          $(".ui.spec-player.progress .bar").css("background-color", "#ff851b")
+          WsSubscribers.triggerSubscribers(channel, event_event, jEvent.data);
+        };
+        WsSubscribers.webSocket.onopen = function () {
+          WsSubscribers.triggerSubscribers("ws", "open");
+          WsSubscribers.webSocketConnected = true;
+          WsSubscribers.registerQueue.forEach((r) => {
+            WsSubscribers.send("wsRelay", "register", r);
+          });
+          WsSubscribers.registerQueue = [];
+        };
+        WsSubscribers.webSocket.onerror = function () {
+          WsSubscribers.triggerSubscribers("ws", "error");
+          WsSubscribers.webSocketConnected = false;
+        };
+        WsSubscribers.webSocket.onclose = function () {
+          WsSubscribers.triggerSubscribers("ws", "close");
+          WsSubscribers.webSocketConnected = false;
+        };
+      },
+      /**
+       * Add callbacks for when certain events are thrown
+       * Execution is guaranteed to be in First In First Out order
+       * @param channels
+       * @param events
+       * @param callback
+       */
+      subscribe: function (channels, events, callback) {
+        if (typeof channels === "string") {
+          let channel = channels;
+          channels = [];
+          channels.push(channel);
         }
-        
-        $(".ui.player-stats .spec-player").text(d['players'][d['game']['target']]['name']);
-        $(".ui.player-stats .score").text(d['players'][d['game']['target']]['score']);
-        $(".ui.player-stats .goals").text(d['players'][d['game']['target']]['goals']);
-        $(".ui.player-stats .shots").text(d['players'][d['game']['target']]['shots']);
-        $(".ui.player-stats .asst").text(d['players'][d['game']['target']]['assits']);
-        $(".ui.player-stats .saves").text(d['players'][d['game']['target']]['saves']);
+        if (typeof events === "string") {
+          let event = events;
+          events = [];
+          events.push(event);
+        }
+        channels.forEach(function (c) {
+          events.forEach(function (e) {
+            if (!WsSubscribers.__subscribers.hasOwnProperty(c)) {
+              WsSubscribers.__subscribers[c] = {};
+            }
+            if (!WsSubscribers.__subscribers[c].hasOwnProperty(e)) {
+              WsSubscribers.__subscribers[c][e] = [];
+              if (WsSubscribers.webSocketConnected) {
+                WsSubscribers.send("wsRelay", "register", `${c}:${e}`);
+              } else {
+                WsSubscribers.registerQueue.push(`${c}:${e}`);
+              }
+            }
+            WsSubscribers.__subscribers[c][e].push(callback);
+          });
+        })
+      },
+      clearEventCallbacks: function (channel, event) {
+        if (WsSubscribers.__subscribers.hasOwnProperty(channel) && WsSubscribers.__subscribers[channel].hasOwnProperty(event)) {
+          WsSubscribers.__subscribers[channel] = {};
+        }
+      },
+      triggerSubscribers: function (channel, event, data) {
+        if (WsSubscribers.__subscribers.hasOwnProperty(channel) && WsSubscribers.__subscribers[channel].hasOwnProperty(event)) {
+          WsSubscribers.__subscribers[channel][event].forEach(function (callback) {
+            if (callback instanceof Function) {
+              callback(data);
+            }
+          });
+        }
+      },
+      send: function (channel, event, data) {
+        if (typeof channel !== 'string') {
+          console.error("Channel must be a string");
+          return;
+        }
+        if (typeof event !== 'string') {
+          console.error("Event must be a string");
+          return;
+        }
+        if (channel === 'local') {
+          this.triggerSubscribers(channel, event, data);
+        } else {
+          let cEvent = channel + ":" + event;
+          WsSubscribers.webSocket.send(JSON.stringify({
+            'event': cEvent,
+            'data': data
+          }));
+        }
       }
+    };
+
+    $(() => {
+      WsSubscribers.init(49322, true);
+      WsSubscribers.subscribe("game", "update_state", (d) => {
+        // Scoreboard + Timer + Team Names
+        $(".team-left .score").text(d['game']['teams'][0]['score']);
+        $(".team-right .score").text(d['game']['teams'][1]['score']);
+        $(".team-left.name").text(d['game']['teams'][0]['name']);
+        $(".team-right.name").text(d['game']['teams'][1]['name']);
+        let secs = d['game']['time_seconds'];
+        let mins = Math.floor(secs / 60);
+        let rSecs = secs - mins * 60;
+        let fSecs = rSecs.toLocaleString('en-US', {
+          minimumIntegerDigits: 2,
+          useGrouping: false
+        })
+        if (d['game']['isOT'] === true) $(".timer").text("+" + mins + ":" + fSecs);
+        else $(".timer").text(mins + ":" + fSecs);
+        $(".team-left-name").text()
+
+        // group players by team
+        let playTeam = _.groupBy(d['players'], 'team');
+
+        // Left Team
+        // Iterate through players and fill player information
+        for (let i = 0; i < 3; i++) {
+          $(`.ui.player${i + 1}-boost-bar.progress`).progress({
+            percent: d['players'][playTeam[0][i]['id']]['boost'],
+            autoSuccess: false
+          });
+          $(`.label.player${i + 1}`).text(d['players'][playTeam[0][i]['id']]['name']);
+          $(`.label.boost.p${i + 1}`).text(d['players'][playTeam[0][i]['id']]['boost']);
+        }
+
+        // Right Team
+        // Iterate through players and fill player information
+        for (let i = 0; i < 3; i++) {
+          $(`.ui.player${i + 5}-boost-bar.progress`).progress({
+            percent: d['players'][playTeam[1][i]['id']]['boost'],
+            autoSuccess: false
+          });
+          $(`.label.player${i + 5}`).text(d['players'][playTeam[1][i]['id']]['name']);
+          $(`.label.boost.p${i + 5}`).text(d['players'][playTeam[1][i]['id']]['boost']);
+        }
+
+        // Displays the stats of the player being spectated
+        if (d['game']['target'] === '') {
+          $(".ui.player-stats").css("visibility", "hidden"); // if no spec player, no stats
+          $(".ui.spec-player.progress").css("visibility", "hidden"); // if no spec, no  boost bar
+        }
+        else {
+          $(".ui.player-stats").css("visibility", "visible");
+          $(".ui.spec-player.progress").css("visibility", "visible");
+          $(".ui.spec-player.progress").progress({
+            percent: d['players'][d['game']['target']]['boost'],
+            autoSuccess: false
+          });
+
+          // Change boost bar color based on team that is being spectated
+          if (d['players'][d['game']['target']]['team'] === 0) {
+            $(".ui.spec-player.progress .bar").css("background-color", "#54c8ff");
+          } else {
+            $(".ui.spec-player.progress .bar").css("background-color", "#ff851b")
+          }
+
+          $(".ui.player-stats .spec-player").text(d['players'][d['game']['target']]['name']);
+          $(".ui.player-stats .score").text(d['players'][d['game']['target']]['score']);
+          $(".ui.player-stats .goals").text(d['players'][d['game']['target']]['goals']);
+          $(".ui.player-stats .shots").text(d['players'][d['game']['target']]['shots']);
+          $(".ui.player-stats .asst").text(d['players'][d['game']['target']]['assits']);
+          $(".ui.player-stats .saves").text(d['players'][d['game']['target']]['saves']);
+        }
+      })
     })
-  })
-</script>
+  </script>
 </body>
+
 </html>
