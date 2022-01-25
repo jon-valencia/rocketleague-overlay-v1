@@ -291,7 +291,11 @@
           $(".ui.player-stats .asst").text(d['players'][d['game']['target']]['assits']);
           $(".ui.player-stats .saves").text(d['players'][d['game']['target']]['saves']);
         }
-      })
+      });
+      WsSubscribers.subscribe("game", "ball_hit", (d) => { });
+      WsSubscribers.subscribe("game", "replay_will_end", (d) => { });
+      WsSubscribers.subscribe("game", "statfeed_event", (d) => { });
+      WsSubscribers.subscribe("game", "replay_start", (d) => { });
     })
   </script>
 </body>
