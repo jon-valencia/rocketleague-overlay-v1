@@ -69,6 +69,7 @@
         </div>
       </div>
     </div>
+    <h1 class="player-who-scored-goal"></h1>
   </div>
   <div class="ui spec-player progress">
     <div class="bar"></div>
@@ -292,9 +293,14 @@
           $(".ui.player-stats .saves").text(d['players'][d['game']['target']]['saves']);
         }
       });
+      WsSubscribers.subscribe("game", "goal_scored", (d) => { });
       WsSubscribers.subscribe("game", "ball_hit", (d) => { });
       WsSubscribers.subscribe("game", "replay_will_end", (d) => { });
-      WsSubscribers.subscribe("game", "statfeed_event", (d) => { });
+      WsSubscribers.subscribe("game", "statfeed_event", (d) => { 
+        if (d['event_name'] === 'Goal') {
+          $(".player-who-scored-goal").text(d['main_target']['name']);
+        }
+      });
       WsSubscribers.subscribe("game", "replay_start", (d) => { });
     })
   </script>
